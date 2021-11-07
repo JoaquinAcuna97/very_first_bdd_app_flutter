@@ -19,5 +19,16 @@ void main() {
       await iTapIcon(tester, Icons.add);
       await iSeeText(tester, '1');
     });
+    testWidgets('''Remove button decrease the counter value''', (tester) async {
+      await theAppIsRunning(tester);
+      await iTapIcon(tester, Icons.remove);
+      await iSeeText(tester, '-1');
+    });
+    testWidgets('''Remove button decrease the counter value twice''', (tester) async {
+      await theAppIsRunning(tester);
+      await iTapIcon(tester, Icons.remove);
+      await iTapIcon(tester, Icons.remove);
+      await iSeeText(tester, '-2');
+    });
   });
 }
